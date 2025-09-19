@@ -20,6 +20,11 @@ mkdir -p ~/docker/portainer/data
 PORTAINER_CONFIG_PATH=$(realpath ~/docker/portainer/data)
 sudo docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock --mount type=bind,src=${PORTAINER_CONFIG_PATH},dst=/data portainer/portainer-ce:alpine
 
+sudo apt-get -y install bluez
+bluetoothctl -- agent on
+bluetoothctl -- discoverable on
+bluetoothctl -- scan on
+
 ## Next install any docker containers before enabling overlayfs and bootro
 #sudo raspi-config nonint enable_overlayfs
 #sudo raspi-config nonint enable_bootro
