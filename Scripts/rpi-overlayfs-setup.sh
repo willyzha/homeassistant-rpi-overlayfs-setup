@@ -11,7 +11,7 @@ sudo apt-get install fuse-overlayfs
 
 # 3. Configure docker to use fuse-overlayfs as storage-driver
 sudo echo -e '{' | sudo tee /etc/docker/daemon.json
-sudo echo -e '  "storage-driver": "fuse-overlayfs,' | sudo tee -a /etc/docker/daemon.json
+sudo echo -e '  "storage-driver": "fuse-overlayfs",' | sudo tee -a /etc/docker/daemon.json
 sudo echo -e '  "log-driver": "json-file",' | sudo tee -a /etc/docker/daemon.json
 sudo echo -e '  "log-opts": {' | sudo tee -a /etc/docker/daemon.json
 sudo echo -e '    "max-size": "500k",' | sudo tee -a /etc/docker/daemon.json
