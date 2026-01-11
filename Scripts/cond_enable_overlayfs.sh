@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if mount -t overlayfs | grep -q "overlay"; then
+if cat /boot/firmware/cmdline.txt | grep -q "overlayroot="; then
     echo "OverlayFS is enabled."
 else
     echo "OverlayFS is not enabled."
