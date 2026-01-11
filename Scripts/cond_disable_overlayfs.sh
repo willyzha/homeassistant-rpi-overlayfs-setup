@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if mount -t overlayfs | grep -q "overlay"; then
+if cat /boot/firmware/cmdline.txt | grep -q "overlayroot="; then
     echo "OverlayFS is enabled."
     echo "Disabling OverlayFS..."
     sudo raspi-config nonint disable_overlayfs
